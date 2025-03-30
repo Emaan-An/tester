@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(69, 203, 112);
+    }
+
+    #container {
+        display: flex;
+        gap: 30px;
+        margin-left: 150px;
+    }
+
+    h2 {
+        text-align: center;
+        color: rgb(248, 244, 244);
+    }
+
+    #card1 {
+        border: 2px;
+        width: 300px;
+        height: 540px;
+        background-color: white;
+        align-items: center;
+    }
+
+    #card2 {
+        border: 2px;
+        width: 300px;
+        height: 540px;
+        background-color: white;
+        align-items: center;
+    }
+
+    #card3 {
+        border: 2px;
+        width: 300px;
+        height: 540px;
+        background-color: white;
+        align-items: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        color: green;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 250px;
+        height: 25px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        border: none;
+        right: 10px;
+        margin-left: 25px;
+    }
+
+    .blue {
+        color: blue;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <h2>How to create a card with css</h2>
+    <div id="container">
+        <div id="card1">
+            <img src="./DevOps-Roadmap.webp" width="300px" height="200px">
+            <h3>DevOps Roadmap</h3>
+            <p>DevOps is a collection of two words,<br> "Development" and "Operations".<br> Representing a cultural
+                approch that <br>
+                emphasizez collection between <br> development and operations terms to <br> streamline the entire
+                software delievry <br>
+                lifecyle. </p>
+            <p class="blue">Continous integration (CI)</p>
+            <p class="blue">Continous Development (CD)</p>
+            <p class="blue">Infrastructure as Code(IaC)</p>
+            <button>Read More...</button>
+        </div>
+        <div id="card2">
+            <img src="./fullstack.jpg" width="300px" height="200px">
+            <h3>Full stack Developer <br>Roadmap</h3>
+
+            <p>A comprehensive roadmap for becoming a<br> Full Stack Developer, covering various<br> Technologies and
+                skills required in both
+                <br>In frontend and backend development lifecyle.
+            </p>
+            <p class="blue">HTML/CSS</p>
+            <p class="blue">JavaScript</p>
+            <p class="blue">Node js</p>
+            <br>
+            <button>Read More...</button>
+        </div>
+        <div id="card3">
+            <img src="./trend.webp" width="300px" height="200px">
+            <h3>Web Development <br> Trends</h3>
+            <p>Explore the latest trends in web<br> Development including advancement in<br> Technologies, frameworks,
+                and best <br> practices shapping the future of web<br> development
+            <p class="blue">Progressive web apps (PWAs)</p>
+            <p class="blue">Serverless Architecture</p>
+            <p class="blue">Single page applications (SPAs)</p>
+            <br>
+            <button>Read More...</button>
+        </div>
+    </div>
+</body>
+
+</html>
