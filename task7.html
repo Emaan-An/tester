@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        background-color: rgb(15, 16, 16);
+    }
+    ul {
+        background-color: rgb(84, 81, 81);
+        margin: 0px 60px;
+        color: rgb(212, 204, 204);
+        font-family:'Courier New', Courier, monospace ;
+    }
+    ul li {
+        display: inline-block;
+        padding: 10px;
+        margin-left: 40px;
+    }
+    .container{
+        margin-top: 80px;
+        color: beige;
+        gap: 120px;
+        font-family: 'Courier New', Courier, monospace ;
+    }
+    .left{
+        margin-top: 80px;
+    }
+    button{
+        width: 230px;
+        padding: 10px;
+        border: none;
+        background-color: rgb(12, 183, 12);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    img{
+        margin-top: 0px;
+        border: 2px solid rgb(160, 146, 146);
+        border-radius: 70%;
+    }
+    .work-with{
+        margin-left: 80px;
+        color: beige;
+    }
+    .five-boxes{
+        gap: 80px;
+        margin-left: 80px;
+        color:  rgb(177, 175, 175);
+        display: flex;
+    }
+    .five-boxes div{
+        border: 1px solid rgb(68, 67, 68);
+        border-radius: 5px;
+        text-align: center;
+        width: 130px;
+        padding: 10px;
+    }
+    @media only screen and (max-width: 425px) {
+  body {
+    background-color: rgb(180, 209, 219);
+  }
+  .left{
+    color: black;
+    margin-top: 0px;
+  }
+  .right{
+    width: 300px;
+    height: 300px;
+  }
+  .container{
+    gap: 50px;
+    flex-direction: column;
+  }
+  .five-boxes{
+    gap: 5px;
+    margin-left: 10px;
+    /* padding: 5px; */
+    color: black;
+    /* flex-direction: row; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .five-boxes div{
+    width: 100px;
+    /* display: flex; */
+  }
+  .work-with{
+    margin-left: 20px;
+    color: black;
+  }
+}
+
+</style>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>case studies</li>
+        <li>Testimonials</li>
+        <li>Recent Work</li>
+        <li>Get In Touch</li>
+        <li><i class="fa-brands fa-linkedin-in"></i></li>
+        <li><i class="fa-brands fa-behance"></i></li>
+        <li><i class="fa-brands fa-twitter"></i></li>
+    </ul>
+    <div class="container d-flex g-4">
+        <div class="left">
+            <h1>Your Name Here</h1>
+            <p>Intro text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. </p>
+            <button>Let's Get Started ></button>
+        </div>
+        <div clas="right">
+            <img src="./../Emaan.jpg" width="350px" height="350px">
+        </div>
+    </div>
+    <div class="work-with">
+        Worked with
+    </div>
+    <br>
+    <div class="five-boxes">
+        <div>Clickup</div>
+        <div>Dropbox</div>
+        <div>PAYCHEX</div>
+        <div>elastic</div>
+        <div>stripe</div>
+    </div>
+</body>
+
+</html>
