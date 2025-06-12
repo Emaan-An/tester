@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+</head>
+<style>
+    h2{
+        border: 2px solid rgb(119, 119, 143);
+        width: 20%;
+        padding: 10px;
+        background: #bab5dc;
+    }
+</style>
+
+<body>
+    <h2>Capitalize First letter</h2>
+    <p id="demo"></p>
+
+    <h2>Remove First letter</h2>
+    <p id="demo1"></p>
+
+    <h2>Iterate over string</h2>
+    <p id="demo2"></p>
+
+    <h2>Get last 4 letters</h2>
+    <p id="demo3"></p>
+
+    <h2>Count words</h2>
+    <p id="demo4"></p>
+
+    <h2>sorting method(ascending)</h2>
+    <p id="demo5"></p>
+
+    <h2>sorting method(descending)</h2>
+    <p id="demo6"></p>
+
+
+    <script>
+        //Problem1
+        let str1 = 'how are you!'
+        // let sentence = " ";
+        // var words = input.split(" ")
+        // for (var i = 0; i < words.length; i++) {
+        //     words[i] = words[i].charAt(0).toUpperCase() + input.slice(1)
+        // }
+        // let join = words.join(" ")
+        // document.getElementById("demo").innerHTML = join;
+        // let cap_str1 = str1.charAt(0).toUpperCase() + str1.slice(1)
+        let cap_str = str1.charAt(0).toUpperCase().concat(str1.slice(1))
+        document.getElementById("demo").innerHTML = cap_str;
+
+        //Problem2
+        let str2 = "Hello world!"
+        let re_str = str2.slice(1)
+        document.getElementById("demo1").innerHTML = re_str;
+
+        //Problem3
+        let str3 = "code"
+        let string = ''
+        for (let x of str3) {
+            string += x + "<br>"
+        }
+        document.getElementById("demo2").innerHTML = string;
+
+        //Problem4
+        let str4 = "Developer"
+        let four = str4.slice(5)
+        document.getElementById("demo3").innerHTML = four;
+
+        //Problem5
+        let str5 = "Jacascript is fun to learn"
+        let words = str5.trim().split(" ")
+        let count = words.length
+        document.getElementById("demo4").innerHTML = count;
+
+        //Classtask
+        const numbers = [10, 5, 8, 1, 7]
+        numbers.sort((a, b) => a - b);
+        document.getElementById("demo5").innerHTML = numbers;
+
+        //Classtask
+        const numbers1 = [10, 5, 8, 1, 7]
+        numbers1.sort((a, b) => b - a);
+        document.getElementById("demo6").innerHTML = numbers1;
+
+
+
+    </script>
+</body>
+
+</html>
