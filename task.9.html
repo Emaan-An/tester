@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    h2 {
+        border: 2px solid #864f4f;
+        width: 20%;
+        padding: 1rem;
+        text-align: center;
+        background:#d99292;
+        margin: 0% auto;
+        margin-top: 3px;
+    }
+
+    .container {
+        width: 50%;
+        display: flex;
+        gap: 50px;
+        padding: 2rem;
+        margin: 0% auto;
+
+    }
+
+    .card {
+        border: 2px solid #864f4f;
+        background: #d99292;
+        padding: 1rem;
+    }
+</style>
+
+<body>
+    <h2>Product_List</h2>
+    <div class="container"></div>
+    <div id="card"></div>
+
+
+
+    <script>
+        const product = [
+            {
+                Id: 1,
+                Name: "product no 1",
+                Description: "High quality product with modern features",
+                Price: 29.99,
+                Currency: "USD",
+                Instock: "True",
+                Category: "Electronics",
+                Tags: ["Gadegt", "Tech", "New"],
+                CreatedAt: "2025-05-16T10:00:00Z",
+                updatedAt: "2025-05-16T10:00:00Z"
+            },
+            {
+                Id: 2,
+                Name: "product no 2",
+                Description: "Durable and affordable item for everyday use",
+                Price: 15.50,
+                Currency: "USD",
+                Instock: "False",
+                Category: "Home & Kitchen",
+                Tags: ["Kitchen", "daily-use"],
+                CreatedAt: "2025-05-15T12:30:00Z",
+                updatedAt: "2025-05-15T12:30:00Z"
+            }
+        ]
+        let cardContainer = document.getElementsByClassName("container")[0]
+
+        cardContainer.innerHTML = product.map((p) => {
+            return `
+            <div class="card">
+                <h1>Id: ${p.Id}</h1>
+            <h3>Name: ${p.Name}</h3>
+            <p>Description: ${p.Description}</p> 
+            <h3>Price: ${p.Price}</h3>
+             <p>Currency: ${p.Currency}</p>
+           <p>Instock: ${p.Instock}</p> 
+           <h3>Category: ${p.Category}</h3> 
+           <p>Tags: ${p.Tags}</p>
+            <p>CreatedAt: ${p.CreatedAt}</p> 
+            <p>updatedAt: ${p.updatedAt}</p> 
+            </div>
+            `
+
+        }).join('');
+
+
+    </script>
+</body>
+
+</html>
