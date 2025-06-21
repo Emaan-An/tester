@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2{
+        color: blue;
+    }
+    input{
+        padding: 5px;
+        background: rgb(209, 206, 206);
+    }
+    button{
+        padding: 5px;
+        background: green;
+        color: white;
+        width: 60px;
+        border: none;
+    }
+    #avg{
+        color: blue;
+    }
+</style>
+
+<body>
+    <h2>Student Manager</h2>
+    <input id="n" placeholder="Name">
+    <input id="m" placeholder="Marks">
+    <button onclick="add()">Add</button>
+
+    <ol id="list"></ol>
+    <p id="avg">Average: 0</p>
+
+    <script>
+        let data = [];
+
+        function add() {
+            let name = n.value;
+            let marks = m.value;
+            if (!name || isNaN(marks)) return;
+            data.push({ name, marks });
+            check();
+        }
+
+        function check() {
+            list.innerHTML = "";
+            let total = 0;
+            data.forEach((s, i) => {
+                total += s.marks;
+                list.innerHTML += `<li style="color:${s.marks < 40 ? 'red' : 'black'}">
+          ${s.name}: ${s.marks} <button onclick="del(${i})">Delete</button></li>`;
+            });
+            avg.innerText = "Average: " + (total / data.length).toFixed(2);
+        }
+
+        function del(i) {
+            data.splice(i, 1);
+            check();
+        }
+
+    </script>
+</body>
+
+</html>
