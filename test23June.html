@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rr</title>
+</head>
+
+<body>
+    <style>
+        /* body{
+            overflow: hidden;
+        } */
+        .lefft {
+            margin-left: 5px;
+            margin-bottom: 10px;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card {
+            border-radius: 12px;
+            padding: 32px;
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-white {
+            background-color: #ffffff;
+            color: #4A5568;
+        }
+
+        .card-white .quote-icon {
+            color: #3B82F6;
+        }
+
+        .card-white h4 {
+            color: #1A202C;
+        }
+
+        .card-white hr {
+            border-color: #E2E8F0;
+        }
+
+        .card-blue {
+            background-color: #3B82F6;
+            color: #ffffff;
+        }
+
+        .card-blue .quote-icon {
+            color: #ffffff;
+        }
+
+        .card-blue hr {
+            border-color: #ffffff;
+            opacity: 0.3;
+        }
+
+        .card-blue h4 {
+            color: #043873;
+        }
+
+        .color {
+            color: #043873;
+        }
+
+        .quote-icon {
+            width: 32px;
+            height: auto;
+            margin-bottom: 24px;
+            margin-left: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 24px 0;
+            flex-grow: 1;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid;
+            width: 100%;
+            margin: 0 0 24px 0;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .profile-info p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .pagination {
+            display: inline-flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-left: 600px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #DBEAFE;
+        }
+
+        .dot.active {
+            background-color: #1E40AF;
+        }
+
+        @media (max-width: 1200px) {
+            .testimonials-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        * {
+            margin: 0% auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #06336d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-item::after {
+            content: " ▼";
+            font-size: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-login {
+            background-color: #ffde7a;
+            color: black;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-cta {
+            background-color: #5ea4f7;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #first-div {
+            display: flex;
+            background: #043873;
+            color: white;
+            padding: 90px;
+            gap: 5px;
+        }
+
+        #firsst-div {
+            display: flex;
+            background: #043873;
+            color: white;
+            padding: 90px;
+            gap: 30px;
+        }
+
+        #firsst-div {
+            width: 100%;
+            background-image: url('../waves.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #firsst-div button {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #4F9CF9;
+            border: none;
+            color: white;
+        }
+
+        .fisrt-right h1,
+        p {
+            margin-top: 40px;
+        }
+
+        #first-div img {
+            margin-right: 30px;
+        }
+
+        .first-left {
+            margin-left: 80px;
+            margin-top: 50px;
+        }
+
+        .first-left p {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        #first-div {
+            width: 100%;
+            background-image: url('../Element.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .sec-div {
+            background-image: url('../WhatsApp\ Image\ 2025-06-22\ at\ 5.33.22\ AM.jpeg');
+            background-size: contain;
+            background-position: left;
+            background-repeat: no-repeat;
+            height: 300px;
+
+        }
+
+        #first-div button {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #4F9CF9;
+            border: none;
+            color: white;
+        }
+
+        .sec-div {
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+            padding: 60px;
+        }
+
+        .secc-div {
+            display: flex;
+            align-items: center;
+            padding: 60px;
+            margin: auto;
+        }
+
+        .text-wrapper {
+            position: relative;
+            display: inline;
+        }
+
+        .text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .vector {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: none;
+        }
+
+        .vectorr {
+            position: absolute;
+            bottom: -30px;
+            left: -60px;
+            width: 330px;
+            z-index: 1;
+            background: none;
+        }
+
+        .text-section {
+            max-width: 500px;
+        }
+
+        .text-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+
+
+        .text-section p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 60px;
+        }
+
+
+        .marg {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .image-section {
+            width: 400px;
+            height: 300px;
+            background-color: #cce5ff;
+        }
+
+        #second-div button {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #4F9CF9;
+            border: none;
+            color: white;
+        }
+
+        h1 {
+            font-size: 55px;
+        }
+
+        #second-div {
+            display: flex;
+            margin-top: 80px;
+            margin-bottom: 60px;
+            margin-left: 80px;
+            margin-right: 80px;
+            gap: 50px;
+        }
+
+        #second-div p {
+            margin-top: 30px;
+        }
+
+        #second-div img {
+            margin-top: 50px;
+        }
+
+        #third-div {
+            display: flex;
+            background: #043873;
+            margin-top: 20px;
+            color: white;
+            padding: 90px;
+            gap: 5px;
+        }
+
+        #third-div img {
+            margin-top: 50px;
+            /* margin-left: 80px; */
+            margin-right: 80px;
+        }
+
+
+        #third-div button {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #4F9CF9;
+            border: none;
+            color: white;
+        }
+
+        .block {
+            margin-top: 170px;
+        }
+
+        .block p {
+            margin-top: 10px;
+        }
+
+        .fifth {
+            margin-top: 30px;
+            margin-bottom: 70px;
+        }
+
+        .fifth h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .fifth p {
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .pricing-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 80px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #FFE492;
+            border-radius: 10px;
+            width: 300px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .card h1 {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            text-align: left;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .card-highlighted {
+            background-color: #002f6c;
+            color: #fff;
+            transform: scale(1.05);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            width: 300px;
+            padding: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-highlighted h1 {
+            color: #FFE492;
+        }
+
+        .card.highlighted h1,
+        .card.highlighted h3,
+        .card.highlighted p,
+        .card.highlighted ul li {
+            color: #fff;
+        }
+
+
+        .card-highlighted button {
+            background-color: #2563eb;
+            color: #fff;
+            margin-right: 70px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .hero {
+            background-color: #0d4a85;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 300px;
+            background: url('left-vector.png') no-repeat left center;
+            background-size: contain;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 1em;
+            color: #dcdcdc;
+        }
+
+        .hero .btn {
+            margin-top: 30px;
+            background-color: #4c9fff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .hero {
+            background-image: url('../BACKGROUND\ \(2\).png');
+            background-size: contain;
+            background-position: left;
+            background-repeat: no-repeat;
+        }
+
+        .hero .btn:hover {
+            background-color: #357dc0;
+        }
+
+        .sponsors-section {
+            background: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .sponsors-section h2 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: normal;
+            color: #222;
+        }
+
+        .highlight {
+            position: relative;
+            font-weight: bold;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10px;
+            background: #ffeb8c;
+            z-index: -1;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .sponsor-logos img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .bold {
+            font-weight: 900px;
+        }
+
+        .client {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* footer */
+        .footer {
+            background-color: #003366;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-top h1 {
+            margin-top: 50px;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .footer-top p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .btn-blue {
+            background-color: #3399ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .btn-blue.small {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .sales-link {
+            margin: 10px 0;
+        }
+
+        .sales-link a {
+            color: #99ccff;
+            text-decoration: underline;
+        }
+
+        .icons img {
+            width: 30px;
+            margin: 10px 5px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: left;
+            margin: 40px 0;
+            padding: 0 20px;
+            margin-top: 100px;
+        }
+
+        .footer-links h3,
+        .footer-links h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links p {
+
+            font-size: 0.85em;
+            /* color: #ddd; */
+            margin: 5px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.8em;
+            border-top: 1px solid #555;
+            /* padding-top: 10px; */
+            color: #ccc;
+        }
+
+        .social img {
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        /* Mobile Signup/Login */
+        .mobile-actions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .btn-outline {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: white;
+            border: 1.5px solid #3399ff;
+            color: #000;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .below {
+            margin-top: 20px;
+        }
+
+        .yellow {
+            color: #FFE492;
+        }
+
+        .social {
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            #first-div {
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 3vw;
+                gap: 30px;
+
+            }
+
+            .first-left,
+            .first-right {
+                margin-left: 0;
+                margin-top: 0;
+                min-width: 0;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            .first-right{
+width: 100%;
+                height: auto;
+            }
+
+            .first-left h1 {
+                font-size: 2rem;
+            }
+
+            .first-left p {
+                max-width: 100%;
+            }
+
+            .first-right img {
+                /* max-width: 98vw; */
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #first-div {
+                padding: 10px 1vw;
+                flex-direction: column;
+            }
+
+            .first-left h1 {
+                font-size: 1.3rem;
+                margin-left: -10px;
+                text-align: center;
+            }
+            .first-left {
+            margin-left: -30px;
+            margin-top: 50px;
+        }
+            /* .first-left p {
+            margin-top: 20px;
+            font-size: 15px;
+        } */
+             .first-left p {
+                text-align: center;
+                font-size: 1rem;
+                margin-left: 100px;
+            }
+
+            .icon button {
+               margin-left: 80px;
+                width: 40%;
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+        }
+         @media (max-width: 500px){
+            .first-left h1 {
+                font-size: 1.3rem;
+                margin-left: 70px;
+                text-align: center;
+            }
+            .icon{
+                margin-left: 45px;
+                width: 300px;
+            }
+            .first-left {
+            margin-left: -30px;
+            margin-top: 50px;
+        }
+            /* .first-left p {
+            margin-top: 20px;
+            font-size: 15px;
+        } */
+             .first-left p {
+                text-align: center;
+                font-size: 1rem;
+                margin-left: 100px;
+            }
+            .first-right{
+                width: 100%;
+                height: auto;
+                /* margin-left: 0px;
+                margin-right: 0px; */
+            }
+         }
+         @media (max-width: 400px){
+             .first-right img{
+                max-width: 98vw;
+                text-align: center;
+                width: 100px;
+                height: 100px;
+                margin-right: -5px;
+            }
+         }
+
+        /* sec */
+        @media (max-width: 900px) {
+            .sec-div {
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 3vw;
+                height: auto;
+                margin-top: 50px;
+                background-size: cover;
+                background-position: center;
+            }
+            .image-section{
+                margin-top: 30px;
+            }
+
+            .text-section,
+            .image-section {
+                width: 100%;
+                max-width: 98vw;
+                text-align: center;
+            }
+
+            .text-section h1 {
+                font-size: 2rem;
+            }
+
+            .vector {
+                width: 180px !important;
+                height: 20px !important;
+            }
+
+            .image-section img {
+                max-width: 98vw;
+                height: auto;
+                /* margin-top: 40px; */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sec-div {
+                padding: 20px 2vw;
+                margin-top: 30px;
+            }
+            .marg{
+                margin-bottom: -30px;
+            }
+
+            .text-section h1 {
+                font-size: 1.3rem;
+            }
+
+            .text-section p {
+                font-size: 0.85rem;
+                margin-bottom: 30px;
+            }
+
+            .vector {
+                width: 120px !important;
+                height: 14px !important;
+            }
+        }
+        /* second */
+        @media (max-width: 900px) {
+    #second-div {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 3vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+    #second-div > div {
+        text-align: center;
+        width: 100%;
+    }
+    #second-div img {
+        margin-top: 20px;
+        width: 80vw;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    #second-div {
+        padding: 20px 2vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+    #second-div img {
+        width: 98vw;
+        max-width: 200px;
+        margin-top: 10px;
+    }
+    .vector {
+        width: 180px !important;
+        height: 20px !important;
+    }
+}
+/* third */
+@media (max-width: 900px) {
+    #third-div {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 3vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+    #third-div > div {
+        text-align: center;
+        width: 100%;
+    }
+    #third-div img {
+        margin-top: 20px;
+        width: 80vw;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    #third-div {
+        padding: 20px 2vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+    #third-div img {
+        width: 98vw;
+        max-width: 200px;
+        margin-top: 10px;
+    }
+    .vectorr {
+        width: 180px !important;
+        height: 20px !important;
+        left: 0 !important;
+        bottom: -10px !important;
+    }
+}
+/* second */
+@media (max-width: 900px) {
+    #second-div {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 3vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+    #second-div img{
+        width: 300px;
+        height: 250px;
+    }
+    #second-div > div {
+        text-align: center;
+        width: 100%;
+    }
+    #second-div img {
+        margin-top: 20px;
+        /* width: 80vw; */
+        width: 900px;
+        height: 300px;
+        /* height: auto; */
+    }
+}
+
+@media (max-width: 600px) {
+    #second-div {
+        padding: 20px 2vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+    #second-div img {
+        width: 1200px;
+        height: 300px;
+        /* width: 98vw;
+        max-width: 200px; */
+        margin-top: 10px;
+    }
+    .vector {
+        width: 180px !important;
+        height: 20px !important;
+    }
+}
+/* fifth */
+@media (max-width: 900px) {
+    .fifth {
+        padding: 40px 3vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .fifth h1 {
+        font-size: 2 em;
+    }
+    .fifth p {
+        font-size: 1rem;
+        margin-left: 0px;
+        margin-right: 0px;
+        
+    }
+}
+
+@media (max-width: 600px) {
+    .fifth {
+        padding: 20px 2vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .fifth h1 {
+        font-size: 1.3em;
+    }
+    .vector {
+        width: 180px !important;
+        height: 20px !important;
+    }
+}
+/* hero */
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 40px 3vw;
+        text-align: center;
+    }
+    .hero-content p {
+        font-size: 5px;
+        margin-left: -5px;
+        text-align: center;
+        max-width: 100vw;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 20px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 20px 2vw;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .vector {
+        width: 120px !important;
+        height: 12px !important;
+    }
+}
+/* workwith */
+@media (max-width: 900px){
+    #firsst-div{
+        flex-direction: column;
+    }
+}
+@media (max-width: 600px){
+    #firsst-div{
+        flex-direction: column;
+    }
+    .first-left {
+            margin-left: -70px;
+            margin-top: 50px;
+        }
+    .first-left img{
+        width: 350px;
+        height: 250px;
+    }
+    /* width="450px" height="350px" */
+}
+@media (max-width: 400px){
+    #firsst-div{
+        flex-direction: column;
+    }
+    .first-left {
+            margin-left: -50px;
+            margin-top: 50px;
+        }
+    .first-left img{
+        width: 250px;
+        height: 150px;
+    }
+    /* width="450px" height="350px" */
+}
+    </style>
+
+    <body>
+
+        <nav>
+            <div class="logo">
+                <img src="../Logo Icon.png" alt="logo" />
+                whitepace
+            </div>
+
+            <div class="nav-links">
+                <div class="nav-item">Products</div>
+                <div class="nav-item">Solutions</div>
+                <div class="nav-item">Resources</div>
+                <div class="nav-item">Pricing</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-cta">Try Whitepace free →</button>
+            </div>
+        </nav>
+
+        <!-- 1st-div -->
+        <div id="first-div">
+            <div class="first-left">
+                <h1>Get More Done with Whitespace</h1>
+                <p>Project management software that enables your teams to collaborate, plan, analyze and manage everyday
+                    tasks</p>
+                <div class="icon"><button>Try Whitepace free →</button></div>
+            </div>
+            <div class="fisrt-right">
+                <img src="../hcb1.jpg" width="450px" height="350px">
+
+            </div>
+
+        </div>
+
+        <div class="sec-div">
+            <div class="text-section">
+                <h1><strong>Project</strong><br>
+                    <div class="text-wrapper">
+                        <span class="text">Management</span>
+                        <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                            height="45px">
+                    </div>
+                </h1>
+                <p>
+                    Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly
+                    from
+                    the app. Take photos with the mobile app and save them to a note.
+
+                </p>
+                <a href="#" class="marg">Get Started →</a>
+
+            </div>
+            <div class="image-section"><img src="../hcb2.webp" width="450px" height="400px"></div>
+
+        </div>
+
+        <div id="second-div">
+            <div><img src="../WhatsApp Image 2025-06-22 at 1.53.20 AM.jpeg" width="450px" height="450px"></div>
+            <div class="block">
+                <h1>Work
+                    <div class="text-wrapper">
+                        <span class="text">Together</span>
+                        <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                            height="45px">
+                    </div>
+                </h1>
+                <p>With whitepace, share your notes with your colleagues and collaborate on them.
+                    You can also publish a note to the internet and share the URL with others.
+                </p>
+                <div class="icon"><button>Try it now →</button></div>
+            </div>
+
+        </div>
+
+        <!-- 3rd -->
+        <div id="third-div">
+            <div class="block">
+                <h1>Use as
+                    <div class="text-wrapper">
+                        <span class="text">Extension</span>
+                        <img src="../yel.png" class="vectorr" width="350px" height="45px">
+                    </div>
+                </h1>
+                <p>Use the web clipper extension, available on Chrome and Firefox, to save web pages or take screenshots
+                    as
+                    notes.
+                </p>
+                <div class="icon"><button>Let's Go →</button></div>
+            </div>
+            <div><img src="../hcb3.jpg" width="450px" height="400px"></div>
+
+        </div>
+        <!-- forth -->
+        <div id="second-div">
+            <div><img src="../Emaan.jpg" width="450px" height="450px"></div>
+            <div class="block">
+                <h1>Customize it to <br>
+                    <div class="text-wrapper">
+                        <span class="text">your needs</span>
+                        <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                            height="45px">
+                    </div>
+                </h1>
+                <p>Customise the app with plugins, custom themes and multiple text editors (Rich Text or Markdown). Or
+                    create your own scripts and plugins using the Extension API.</p>
+                <div class="icon"><button>Let's Go →</button></div>
+            </div>
+
+        </div>
+        <!-- 5th -->
+        <div class="fifth">
+            <h1>Choose
+                <div class="text-wrapper">
+                    <span class="text">your plan</span>
+                    <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                        height="45px">
+                </div>
+            </h1>
+            <p>Whether you want to get organized, keep your personal life on track, or boost workplace productivity,
+                Evernote has the right plan for you.</p>
+        </div>
+
+        <!-- cards -->
+        <section class="pricing-section">
+            <div class="card">
+                <h3>Free</h3>
+                <h1>$0</h1>
+                <p>Capture ideas and find them quickly</p>
+                <ul>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Sync unlimited devices</li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> 10 GB monthly uploads</li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> 200 MB max. note size</li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Customize Home dashboard and access extra
+                        widgets
+                    </li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Connect 1 primary Google Calendar account
+                    </li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Add due dates, reminders, and notifications
+                    </li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+
+            <div class="card-highlighted">
+                <h3>Personal</h3>
+                <h1>$11.99</h1>
+                <p>Keep home and family on track</p>
+                <ul>
+                    <li><img src="../tee.png" width="20px" height="20px"> Sync unlimited devices</li>
+                    <li><img src="../tee.png" width="20px" height="20px"> 10 GB monthly uploads</li>
+                    <li><img src="../tee.png" width="20px" height="20px"> 200 MB max. note size</li>
+                    <li><img src="../tee.png" width="20px" height="20px"> Customize Home dashboard and access extra
+                        widgets
+                    </li>
+                    <li><img src="../tee.png" width="20px" height="20px"> Connect primary Google Calendar account</li>
+                    <li><img src="../tee.png" width="20px" height="20px"> Add due dates, reminders, and notifications to
+                        your tasks</li>
+                </ul>
+                <button class="highlighted-btn">Get Started</button>
+            </div>
+
+            <div class="card">
+                <h3>Organization</h3>
+                <h1>$49.99</h1>
+                <p>Capture ideas and find them quickly</p>
+                <ul>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Sync unlimited devices</li>
+                    <li><img src="../Icon.png" width="20px" height="20px">10 GB monthly uploads</li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> 200 MB max. note size</li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Customize Home dashboard and access extra
+                        widgets
+                    </li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Connect 1 primary Google Calendar account
+                    </li>
+                    <li><img src="../Icon.png" width="20px" height="20px"> Add due dates, reminders, and notifications
+                    </li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+        </section>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="image-box"></div>
+                <h1>Your work, everywhere <div class="text-wrapper">
+                        <span class="text">your are</span>
+                        <img src="../bluee.png" class="vector" width="250px" height="25px">
+                    </div>
+                </h1>
+                <p class="heroo">
+                    Access your notes from your computer, phone or tablet by synchronizing with various services,
+                    including whitepage, Dropbox and OneDrive. The app is available on Windows, macOS, Linux, Android
+                    and iOS.A terminal app is also available!
+                </p>
+                <button class="btn">Try Taskey →</button>
+            </div>
+        </section>
+        <div id="second-div">
+            <div class="block">
+                <h1><strong>100%</strong>
+                    <div class="text-wrapper">
+                        <span class="text">your data</span>
+                        <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                            height="45px">
+                    </div>
+                </h1>
+                <p>The app is open source and your notes are saved to an open format, so you'll always have access to
+                    them.
+                    Uses End-To-End Encryption (E2EE) to secure your notes and ensure no-one but yourself can access
+                    them.
+                </p>
+                <div class="icon"><button>Let's Go →</button></div>
+            </div>
+            <div><img src="../box.png" width="450px" height="400px"></div>
+        </div>
+
+
+        <div class="fifth">
+            <h1>Our
+                <div class="text-wrapper">
+                    <span class="text">sponsors</span>
+                    <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="450px"
+                        height="45px">
+                </div>
+            </h1>
+
+            <div class="sponsor-logos">
+                <h2> <img src="../Apple.png" alt="Microsoft"></h2>
+                <h2> <img src="../Microsoft.png" alt="Microsoft"></h2>
+                <h2 class="bold"><img src="../Group.png" alt="slack"></h2>
+                <img src="../Group 246.png" alt="Google">
+            </div>
+
+        </div>
+
+        <div id="firsst-div">
+            <div class="first-left">
+                <img src="../Apps.png" width="450px" height="350px">
+
+            </div>
+            <div class="fisrt-right">
+
+                <h1>Work with Your Favorite Apps Using whitepace</h1>
+                <p>Whitepace teams up with your favorite software. Integrate with over 1000+ apps with Zapier to have
+                    all
+                    the tools you need for your project success.</p>
+                <div class="icon"><button>Try Whitepace free →</button></div>
+            </div>
+
+        </div>
+        <div class="client">
+            <h1>What our client
+                <div class="text-wrapper">
+                    <span class="text">says</span>
+                    <img src="../WhatsApp Image 2025-06-22 at 4.47.14 AM.jpeg" class="vector" width="300px"
+                        height="45px">
+                </div>
+            </h1>
+        </div>
+        <!-- hiehf -->
+        <div class="testimonials-container">
+            <div class="testimonial-card card-white">
+
+                <img src="../Quote.png" width="56" height="44" viewBox="0 0 56 44" fill="none" class="lefft">
+                <p class="testimonial-text">Whitepate is designed as a collaboration tool for businesses that is a full
+                    project management solution.</p>
+                <hr style="border: none; height: 0.5px; background-color: #212529ed;">
+                <div class="profile">
+                    <img src="../Avater.png" alt="Profile of Oberon Shaw" class="profile-img">
+                    <div class="profile-info">
+                        <h4>Oberon Shaw, MCH</h4>
+                        <p>Head of Talent Acquisition, North America</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card card-blue">
+
+                <img src="../aq.png" width="56" height="44" viewBox="0 0 56 44" fill="none" class="lefft">
+                <p class="testimonial-text">Whitepate is designed as a collaboration tool for businesses that is a full
+                    project management solution.</p>
+                <hr>
+                <div class="profile">
+                    <img src="../bbboy.png" alt="Profile of Oberon Shaw" class="profile-img">
+                    <div class="profile-info">
+                        <h4 class="color">Oberon Shaw, MCH</h4>
+                        <p>Head of Talent Acquisition, North America</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card card-blue">
+                <img src="../aq.png" width="56" height="44" viewBox="0 0 56 44" fill="none" class="lefft">
+                <p class="testimonial-text">Whitepate is designed as a collaboration tool for businesses that is a full
+                    project management solution.</p>
+                <hr>
+                <div class="profile">
+                    <img src="../man.png" alt="Profile of Oberon Shaw" class="profile-img">
+                    <div class="profile-info">
+                        <h4 class="color">Oberon Shaw, MCH</h4>
+                        <p>Head of Talent Acquisition, North America</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-top">
+                <h1>Try Whitepace<br>today</h1>
+                <p>Get started for free.<br>Add your whole team as your needs grow.</p>
+                <button class="btn-blue">Try Taskey free →</button>
+                <p class="sales-link">On a big team? Contact sales</p>
+                <div class="icons">
+                    <img src="../apple-black-logo 2.png" alt="Apple" />
+                    <img src="../windows-logo 1.png" alt="Windows" />
+                    <img src="../android-logo 1.png" alt="Android" />
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h3><img src="../Logo Icon.png" width="27" height="19px" class="top">whitepace</h3>
+                    <p>Whitespace was created for<br> the new ways we live and<br> work. We make a better<br> workspace
+                        around the world.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <p class="yellow">Overview</p>
+                    <p>Pricing</p>
+                    <p>Customer stories</p>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <p>Blog</p>
+                    <p>Guides & tutorials</p>
+                    <p>Help center</p>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <p>About us</p>
+                    <p>Careers</p>
+                    <p>Media Kit</p>
+                </div>
+                <div>
+                    <h4>Try It Today</h4>
+                    <p>Get started for free. Add your whole team as your needs grow.</p>
+                    <button class="btn-blue small">Start today →</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>🌐 English<img src="../Arrow.png" width="12px" height="9px"></p>
+                <p>Terms & privacy</p>
+                <p>Security</p>
+                <p>Status</p>
+                <p>© 2021 Whitespace LLC.</p>
+                <div class="social">
+                    <img src="../Icon_11_.png" width="2px" height="15px" />
+                    <img src="../Twitter.png" alt="Twitter" width="2px" height="15px" />
+                    <img src="../Linkedin.png" alt="LinkedIn" width="2px" height="15px" />
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
+</body>
+
+</html>
