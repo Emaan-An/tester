@@ -1,0 +1,2514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMAAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* herosection */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #ededed;
+        color: #222;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    /* navbarsticky */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        /* ensures it stays on top of other content */
+        /* background-color: white; */
+        /* padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    }
+
+    /* Header and Navbar */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 5vw 0 5vw;
+        background: #ededed;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        color: #888;
+        line-height: 1.1;
+    }
+
+    .logo-large {
+        font-size: 1.7rem;
+        color: #888;
+        font-weight: 400;
+    }
+
+    nav {
+        position: relative;
+        position: sticky;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #888;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: #00baff;
+        border-bottom: 2px solid #00baff;
+    }
+
+    .nav-toggle {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #00baff;
+        margin-right: 10px;
+    }
+
+    /* Hero Section */
+    #hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 5vw 0 5vw;
+        min-height: 80vh;
+        gap: 40px;
+    }
+
+    .hero-left {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .hello-badge {
+        display: inline-block;
+        background: #00baff;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+
+    .hero-left h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        /* margin-left: -55px; */
+        margin: 18px 120px 10px 0;
+        color: #181818;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: #888;
+        margin-bottom: 32px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 24px;
+        margin-top: 18px;
+    }
+
+    .social-icons img {
+        width: 48px;
+        height: 48px;
+        background: #00baff;
+        border-radius: 50%;
+        padding: 8px;
+        transition: transform 0.2s;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Profile Picture with Circles */
+    .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-pic-wrapper {
+        position: relative;
+        width: 340px;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-outer {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: #d3d3d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-inner {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-pic {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #fff;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+        .hero {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 3vw 0 3vw;
+        }
+
+        .hero-right,
+        .hero-left {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .profile-pic-wrapper {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle-outer {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle-inner {
+            width: 180px;
+            height: 180px;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+        }
+    }
+
+    @media (max-width:600px) {
+        #hero {
+            display: block;
+        }
+    }
+
+    /* Navbar Toggle for Small Screens */
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: #ededed;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 18px 0;
+            z-index: 100;
+        }
+
+        .nav {
+            position: relative;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+    }
+
+    .nav-link {
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .nav-link.active {
+        color: blue;
+        font-weight: bold;
+        border-bottom: 2px solid blue;
+    }
+</style>
+<style>
+    /* experience */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #ededed;
+        color: #222;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    /* Header and Navbar */
+    /* header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 5vw 0 5vw;
+        background: #ededed;
+    } */
+
+    .logo {
+        font-size: 1.2rem;
+        color: #888;
+        line-height: 1.1;
+    }
+
+    .logo-large {
+        font-size: 1.7rem;
+        color: #888;
+        font-weight: 400;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #888;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: #00baff;
+        border-bottom: 2px solid #00baff;
+    }
+
+    .nav-toggle {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #00baff;
+        margin-right: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 5vw 0 5vw;
+        min-height: 80vh;
+        gap: 40px;
+    }
+
+    .hero-left {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .hello-badge {
+        display: inline-block;
+        background: #00baff;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin: 18px 0 10px 0;
+        color: #181818;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: #888;
+        margin-bottom: 32px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 24px;
+        margin-top: 18px;
+    }
+
+    .social-icons img {
+        width: 48px;
+        height: 48px;
+        background: #00baff;
+        border-radius: 50%;
+        padding: 8px;
+        transition: transform 0.2s;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Profile Picture with Circles */
+    .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-pic-wrapper {
+        position: relative;
+        width: 340px;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-outer {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: #d3d3d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-inner {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-pic {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #fff;
+    }
+
+    /* Experience Cards */
+    .explarge {
+        font-size: xx-large;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    body {
+        background: #ededed;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        color: #222;
+    }
+
+    .experience-container {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 40px 0 0 0;
+        align-items: center;
+    }
+
+    .experience-card {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border-radius: 32px;
+        box-shadow: none;
+        width: 80vw;
+        max-width: 1600px;
+        min-height: 260px;
+        margin: 0 auto;
+        gap: 40px;
+        position: relative;
+    }
+
+    .experience-card3 {
+        margin-top: 100px;
+        margin-right: 180px;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border-radius: 32px;
+        box-shadow: none;
+        width: 80vw;
+        max-width: 1600px;
+        min-height: 260px;
+        margin: 0 auto;
+        gap: 40px;
+        position: relative;
+    }
+
+    .experience-card4 {
+        margin-top: 100px;
+        margin-right: 180px;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border-radius: 32px;
+        box-shadow: none;
+        width: 80vw;
+        max-width: 1600px;
+        min-height: 260px;
+        margin: 0 auto;
+        gap: 40px;
+        position: relative;
+    }
+
+    .exp-img {
+        width: 350px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 32px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    }
+
+    .flex {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    .exp-content {
+        flex: 1;
+        padding: 0 32px;
+    }
+
+    .exp-content.right {
+        text-align: right;
+        order: 2;
+    }
+
+    .experience-card:nth-child(2) {
+        flex-direction: row-reverse;
+    }
+
+    .exp-content h2 {
+        font-size: 2.7rem;
+        font-weight: 700;
+        margin-bottom: 0.2em;
+        letter-spacing: 1px;
+    }
+
+    .exp-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 0.2em;
+    }
+
+    .exp-date {
+        font-size: 1.3rem;
+        color: #888;
+        margin-bottom: 0.7em;
+    }
+
+    .exp-desc {
+        font-size: 1rem;
+        margin-right: 280px;
+        color: #9b9898;
+        margin-bottom: 1.2em;
+        line-height: 1.3;
+    }
+
+    .exp-descl {
+        font-size: 1rem;
+        margin-left: 150px;
+        color: #9b9898;
+        margin-bottom: 1.2em;
+        line-height: 1.3;
+    }
+
+    .exp-icons {
+        font-size: 2rem;
+        color: #222;
+        display: flex;
+        gap: 18px;
+    }
+
+    .exp-content.right .exp-icons {
+        justify-content: flex-end;
+    }
+
+    /* @media (max-width: 1100px) {
+        .experience-card {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 98vw;
+            gap: 20px;
+        }
+
+        .exp-img {
+            width: 98vw;
+            max-width: 420px;
+            height: 180px;
+        }
+
+        .exp-content,
+        .exp-content.right {
+            padding: 0 10px;
+            text-align: left;
+            order: unset;
+        }
+    } */
+
+    /* @media (max-width: 980px) {
+        #experience-card {
+            display: block;
+        }
+
+        .exp-desc {
+            font-size: 1rem;
+            margin-right: 80px;
+            color: #9b9898;
+            margin-bottom: 1.2em;
+            line-height: 1.3;
+        }
+
+        .exp-descl {
+            font-size: 1rem;
+            margin-left: 150px;
+            color: #9b9898;
+            margin-bottom: 1.2em;
+            line-height: 1.3;
+        }
+
+        .experience-card {
+            display: block;
+        }
+    } */
+
+    @media (max-width: 768px) {
+        .experience-container {
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px 0;
+            align-items: center;
+        }
+
+        .experience-card,
+        #experience-card {
+            flex-direction: column !important;
+            align-items: center;
+            width: 95vw;
+            gap: 20px;
+        }
+
+        .exp-img {
+            width: 95vw !important;
+            max-width: 420px;
+            height: auto !important;
+            border-radius: 24px;
+            object-fit: cover;
+        }
+
+        .exp-content {
+            text-align: center !important;
+            padding: 0 20px;
+            order: 2;
+
+            /** NEW: Text readability fix */
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+
+        .exp-content.right {
+            text-align: center !important;
+        }
+
+        .exp-content p {
+            margin-right: 20px;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+
+        .exp-icons {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width:960px) {
+        .exp-content p {
+            margin-right: 10px;
+            margin-left: 10px;
+            line-height: 1.6;
+        }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+        .hero {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 3vw 0 3vw;
+        }
+
+        .hero-right,
+        .hero-left {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .profile-pic-wrapper {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle-outer {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle-inner {
+            width: 180px;
+            height: 180px;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+        }
+    }
+
+    /* Navbar Toggle for Small Screens */
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: #ededed;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 18px 0;
+            z-index: 100;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+    }
+
+    /* achievements */
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    h1 span {
+        text-decoration: underline;
+    }
+
+    .achievement {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 15px;
+        font-size: 20px;
+    }
+
+    .green {
+        background: #2ecc71;
+    }
+
+    .blue {
+        background: #3498db;
+    }
+
+    .teal {
+        background: #1abc9c;
+    }
+
+    .pink {
+        background: #e91e63;
+    }
+
+    .star {
+        background: #2ecc71;
+    }
+
+    .text {
+        /* margin-top: 15px; */
+        /* line-height: 1.8; */
+    }
+
+    .text .titlee {
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .text .subtitle {
+        color: #555;
+        font-size: 14px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    h1 span {
+        text-decoration: underline;
+    }
+
+    .achievement {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .icon {
+        margin-top: -25px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 15px;
+        font-size: 20px;
+    }
+
+    .gold {
+        background: #f1c40f;
+    }
+
+    .silver {
+        background: #95a5a6;
+    }
+
+    .bronze {
+        background: #d35400;
+    }
+
+    .text {
+        line-height: 1.4;
+    }
+
+    .text .titlee {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .text .subtitle {
+        text-align: left;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .achieve {
+        margin-top: 30px;
+
+        margin-left: 400px;
+    }
+
+    @media (max-width: 1016px) {
+        .achieve {
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+    }
+
+    .aboutme {
+        display: flex;
+        gap: 50px;
+        margin: 80px;
+    }
+
+    @media (max-width: 900px) {
+        .aboutme {
+            display: flex;
+            gap: 5px;
+            margin: 40px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .aboutme {
+            display: block;
+            margin: 5px;
+        }
+    }
+
+    #abt {
+        text-decoration: underline;
+    }
+
+    .aboutme button {
+        background: #2db8b8;
+        color: white;
+        margin-top: 10px;
+        border-radius: 20px;
+        border: none;
+        width: 150px;
+        padding: 10px;
+    }
+
+    .aboutme p {
+        margin: 20px;
+        margin-top: 20px;
+    }
+
+    .gray {
+        color: #8a8e8e;
+    }
+
+    /* h1{
+        text-decoration: underline;
+    } */
+    /* Blog */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 10px;
+    }
+
+    /* .title {
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+} */
+    .blogs {
+        margin-top: 20px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .blog-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-8px) scale(1.03);
+    }
+
+    .blog-img {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .blog-img-text {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        color: #222;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        max-width: 80%;
+    }
+
+    .blog-content {
+        padding: 20px 20px 15px 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-content h2 {
+        font-size: 1.35rem;
+        margin: 0 0 10px 0;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .blog-content .date {
+        color: #888;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .tags {
+        margin-bottom: 15px;
+    }
+
+    .tags span {
+        display: inline-block;
+        background: #00bfff;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-size: 0.95rem;
+        margin-right: 7px;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .blog-footer {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        color: #888;
+        font-size: 1.1rem;
+        margin-top: auto;
+    }
+
+    .blog-footer i {
+        margin-right: 5px;
+    }
+
+    @media (max-width: 1100px) {
+        .blogs {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .blog-card {
+            width: 90%;
+            max-width: 400px;
+        }
+    }
+
+    .button {
+        color: white;
+        background-color: #00baff;
+        border-radius: 20px;
+        padding: 10px;
+        border: none;
+    }
+
+    /* header {
+        background-color: rgb(27, 76, 86);
+        position: sticky;
+        top: 0%;
+        z-index: 1000;
+    } */
+    /* testimonials */
+    /* Testimonials Section */
+    .testimonials-section {
+        /* background: #f7f7f7; */
+        padding: 60px 0 80px 0;
+        text-align: center;
+    }
+
+    .testimonials-title {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 32px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .testimonials-title .underline {
+        display: block;
+        width: 90px;
+        height: 4px;
+        background: #222;
+        margin: 0 auto;
+        margin-top: 8px;
+        border-radius: 2px;
+    }
+
+    .testimonial-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .testimonial-arrow {
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        color: #888;
+        cursor: pointer;
+        transition: color 0.2s;
+        padding: 0 18px;
+        user-select: none;
+    }
+
+    .testimonial-arrow:hover {
+        color: #00baff;
+    }
+
+    .testimonial-content {
+        background: transparent;
+        border-radius: 24px;
+        padding: 0 0 0 0;
+        min-width: 600px;
+        max-width: 1000px;
+        margin: 0 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+    .testimonial-content.fade {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+    .testimonial-content.fade-out {
+        opacity: 0;
+    }
+
+    .testimonial-text {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #181818;
+        margin-bottom: 40px;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 10px;
+    }
+
+    .testimonial-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        font-size: 2rem;
+    }
+
+    .testimonial-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #222;
+        text-align: left;
+    }
+
+    .testimonial-role {
+        font-size: 1.1rem;
+        color: #888;
+        text-align: left;
+    }
+
+    @media (max-width: 900px) {
+        .testimonial-content {
+            min-width: 0;
+            max-width: 95vw;
+            padding: 0 10px;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+        }
+
+
+        .testimonials-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .testimonial-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #181818;
+            margin-bottom: 40px;
+            /* text-align: center; */
+            line-height: 0.8;
+            letter-spacing: 0.1px;
+            /* padding: 55px; */
+        }
+    }
+
+    /* contact */
+    #contact-section {
+        min-height: 100vh;
+        background: #03A9F4;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .social-icons a {
+        color: #fff;
+        font-size: 2.2rem;
+        transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+        color: #222;
+    }
+
+    .send-message {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        max-width: 700px;
+        min-width: 250px;
+        gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 1rem;
+        border: none;
+        border-radius: 12px;
+        background: #e0e0e0;
+        font-size: 1rem;
+        resize: none;
+    }
+
+    .contact-form textarea {
+        min-height: 80px;
+        max-height: 200px;
+    }
+
+    .contact-form button {
+        color: rgb(143, 137, 137);
+        background-color: #a7d5e6;
+        border-radius: 10px;
+        padding: 10px;
+        border: none;
+        Width: 90px
+    }
+
+    .contact-form button:hover {
+        background: #03A9F4;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    @media (max-width: 900px) {
+        .contact-form {
+            width: 80%;
+        }
+
+        .contact-section h1 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .contact-form {
+            width: 95%;
+        }
+
+        .contact-section h1 {
+            font-size: 1.5rem;
+        }
+
+        .social-icons {
+            gap: 1rem;
+        }
+    }
+
+    /* animation */
+    @keyframes fadeSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Scale on hover */
+    @keyframes scaleUp {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.05);
+        }
+    }
+
+    /* Pulse circle */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.9;
+        }
+
+        50% {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0.9;
+        }
+    }
+
+    .hero-left {
+        animation: fadeSlideUp 1s ease-out forwards;
+    }
+
+    .hero-right .circle-outer {
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    .nav-links a {
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #00baff;
+        transition: width 0.3s ease;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+
+    .blog-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ---------- General Fade In ---------- */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .experience-container,
+    #experience-card,
+    .achievement,
+    #About .container {
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+    }
+
+    .experience-container {
+        animation-delay: 0.2s;
+    }
+
+    #experience-card {
+        animation-delay: 0.4s;
+    }
+
+    .achievement {
+        animation-delay: 0.6s;
+    }
+
+    #About .container {
+        animation-delay: 0.8s;
+    }
+
+    /* ---------- Hover Card Animation ---------- */
+    .experience-card,
+    #experience-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .experience-card:hover,
+    #experience-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ---------- Icon Hover Animation ---------- */
+    .exp-icons span {
+        display: inline-block;
+        transition: transform 0.4s ease;
+    }
+
+    .exp-icons span:hover {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    /* ---------- Button Animation ---------- */
+    .button {
+        transition: 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+        background: #222;
+        transform: scale(1.05);
+    }
+
+    /* ---------- About Section Image Animation ---------- */
+    #About .left img {
+        transition: transform 0.5s ease;
+    }
+
+    #About .left img:hover {
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+    /* Add a base transition for smoothness */
+    .blog-card {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* On hover: scale up the card slightly and lift it */
+    .blog-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image zoom effect */
+    .blog-img {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .blog-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .blog-card:hover .blog-img img {
+        transform: scale(1.1);
+    }
+
+    /* Fade-in text overlay */
+    .blog-img-text {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        width: 100%;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+    }
+
+    .blog-card:hover .blog-img-text {
+        transform: translateY(0%);
+    }
+
+    /* Smooth tags appearance */
+    .tags .button {
+        transition: transform 0.3s ease, 0.3s ease;
+    }
+
+    .tags .button:hover {
+        transform: translateY(-3px);
+        background: #222;
+        color: #fff;
+    }
+
+    /* ---------- Contact Section Animations ---------- */
+
+    /* Fade in & slide up */
+    #contact-section {
+        animation: fadeSlideUp 1s ease forwards;
+        opacity: 0;
+        /* starts hidden */
+    }
+
+    @keyframes fadeSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Social Icons: scale & rotate on hover */
+    .social-icons a {
+        transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .social-icons a:hover {
+        transform: scale(1.3) rotate(10deg);
+        color: #222;
+    }
+
+    /* Input & textarea: subtle box shadow on focus */
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 186, 255, 0.5);
+        background: #fff;
+        transition: box-shadow 0.3s ease, 0.3s ease;
+    }
+
+    /* Button: pop effect on hover */
+    .contact-form button {
+        transition: transform 0.3s ease, 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 186, 255, 0.4);
+    }
+
+    /* ---------- Testimonials Section Styles ---------- */
+    .testimonials-section {
+        text-align: center;
+        padding: 60px 20px;
+        background: #f5f5f5;
+        position: relative;
+    }
+
+    .testimonials-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* aboutmeaniamtion */
+    .hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* icon */
+    .icon {
+        opacity: 0;
+        transform: scale(0.6);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .icon.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* button */
+    .aboutme button {
+        background-color: #007BFF;
+        /* Example button color */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .aboutme button:hover {
+        background-color: #0056b3;
+        /* Darker blue on hover */
+        transform: scale(1.05);
+        /* Slightly enlarge */
+    }
+
+    button:hover {
+        cursor: p;
+    }
+
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: #ededed;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-small">Tapajyoti</span><br>
+            <span class="logo-large">Bose</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link">HOME</a></li>
+                <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#ACHIEVEMENTS" class="nav-link">ACHIEVEMENTS</a></li>
+                <li><a href="#About" class="nav-link">ABOUT</a></li>
+                <li><a href="#Blogs" class="nav-link">BLOGS</a></li>
+                <li><a href="#testimonials" class="nav-link">TESTIMONIALS</a></li>
+                <li><a href="#contact-section" class="nav-link">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY + 120; // Adjust based on your navbar height
+
+            links.forEach(link => {
+                const sectionId = link.getAttribute('href');
+                if (!sectionId.startsWith("#") || sectionId === "#") return;
+
+                const section = document.querySelector(sectionId);
+                if (!section) return;
+
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <main>
+        <section id="hero">
+            <div class="hero-left">
+                <div class="hello-badge">Hello! I am</div>
+                <h1>TAPAJYOTI BOSE</h1>
+                <p class="subtitle">Product Developer</p>
+                <div class="social-icons">
+                    <a href="#"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                            alt="LinkedIn"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub"></a>
+                    <a href="#"><img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="DEV"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Upwork"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968706.png" alt="Medium"></a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="profile-pic-wrapper">
+                    <div class="circle-outer">
+                        <div class="circle-inner">
+                            <img src="./internperson.jpeg" alt="Tapajyoti Bose" class="profile-pic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Toggle nav on small screens
+        document.getElementById('nav-toggle').onclick = function () {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+        //section
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    <section id="experience">
+        <h1 class="explarge">EXPERIENCE</h1>
+        <div class="experience-container">
+            <!-- Card 1 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./upwork.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>UPWORK</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">May 2021 - Present</p>
+                    <p class="exp-desc">
+                        A Top Rated Freelancer at Upwork, an American freelancing platform and the largest network of
+                        independent professionals to get things done, from quick turnarounds to big transformations.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>LOUNGE</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">January 2022 - Present</p>
+                    <p class="exp-descl">
+                        Developed features for the web & native app which took the app from launch to 90,000 monthly
+                        active users.<br>
+                        Was awarded with a 5-Star review and the following testimonial: “Tap is an exceptional software
+                        engineer. He worked in my team for nearly a year, and consistently performed to an extremely
+                        high level. In particular his strengths are his attitude, speed to output, intellectual
+                        curiosity and ability to learn new things. I can't recommend Tap highly enough!”
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                        <span><i class="fa-solid fa-robot"></i></span>
+                        <span><i class="fa-brands fa-apple"></i></span>
+                    </div>
+                </div>
+                <img src="./lounge.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card3,4 -->
+        <div class="experience-container">
+            <!-- Card 3 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./replai.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>REPLAI</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">January 2022</p>
+                    <p class="exp-desc">
+                        Developed the entire UI Library for Replai,a Multi-Milion Dollar<br>Startup that Leverages AI
+                        and Machine
+                        Vission to make better<br>creative decisions at scale.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>CLYDE.AI</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">November 2021 - January 2022</p>
+                    <p class="exp-descl">
+                        Clyde is a AI powered Web Applications which automatically calculates the value of rewards you'd
+                        earn based on your transaction
+                        data.Collaborated with the team to develop theClyde Web Application.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+                <img src="./CLYDE.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card5,6 -->
+        <div class="experience-container">
+            <!-- Card 5 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./ELEMENT.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>ELEMENT FINANCE</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">November 2021</p>
+                    <p class="exp-desc">
+                        Created the component of Library for Element Finance and was<br>
+                        awarded a 5 Star Review for the final product and the following <br>
+                        Testimonial."Tapajyoti was great and not only completed the<br>
+                        the job to the best of his ability but under the alloted time and<br>
+                        budget!He was quick to communicate about issues and think<br>
+                        on his feet.Great to work with!"
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>CHIRRUP</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">May 2021 - September 2021</p>
+                    <p class="exp-descl">
+                        Built theDashboard UI and was awarded a 5 Star Review for the
+                        final product the the following Testimonial."Amaizing front-end
+                        developer.Tap helped build out our web app and will add value<br>
+                        to any future project he works on.Works quickly,Easily<br>adaptable.And helped form solutions to
+                        problems that poppedup along the way .We'd happily hire him again."
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+                <img src="./CHURRUP.png" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card7,8 -->
+        <div class="experience-container">
+            <!-- Card7 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./HOMEJAM.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>HOMEJAM</h3>
+                    <h4>Freelance</h4>
+                    <p class="exp-date">February 2021</p>
+                    <p class="exp-desc">
+                        Developed the payment confirmation page and a plethora of<br>
+                        bug fixes for HomeJam Web App,an application delivering<br>
+                        virtual concerts like you've never experienced before.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>SMARTSAPP</h3>
+                    <h4>Personal Project</h4>
+                    <p class="exp-date">November 2020 - January 2021</p>
+                    <p class="exp-descl">
+                        With SmartsApp.you'll get fast and simple messaging secured with End to End Encryption for
+                        free,available on the web,all
+                        android & IOS phones,and Windows,Linux & macOS computers all over the world.Used Difflie-Helimen
+                        key Exchange algorith to generate the shared keys &
+                        XOR Cipher to encrypt messages.The tech stack consisted of React,Redux,Electron,Flutter &
+                        Firebae.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                        <span><i class="fa-brands fa-github"></i></span>
+                        <span><i class="fa-solid fa-download"></i></span>
+                    </div>
+                </div>
+                <img src="./smartsapp.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card9,10 -->
+        <div class="experience-container">
+            <!-- Card 9 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./algo.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>THE ALGORITHMS</h3>
+                    <h4>Open Source Maintainer</h4>
+                    <p class="exp-date">October 2020 - Present</p>
+                    <p class="exp-desc">
+                        Maintaing and Adding New Algorithms to the code base of <br>the world's largest Open Source
+                        resources for learning Data<br>
+                        Structures & Algorithms and their implementation in any<br> Programming Language
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-brands fa-github"></i></span>
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>HACKTOBER FEST 2020</h3>
+                    <h4>Open Source</h4>
+                    <p class="exp-date">October 2020</p>
+                    <p class="exp-descl">
+                        Created Quality Pull Requests in the celebration of the Open source spirit at
+                        HACKtoberFest,month alond celebration of open source software run by digitalOcean
+                        in partnership with GitHub and Twilio.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+                <img src="./hacktober.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card11,12 -->
+        <div class="experience-container">
+            <!-- Card 11 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./unhook.png" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>UNHOOK</h3>
+                    <h4>Personal Project</h4>
+                    <p class="exp-date">October 2020</p>
+                    <p class="exp-desc">
+                        If you are one of the rare breed of people who call themselves programmers,you must have faced
+                        the following situation:
+                        ypu were so many working,that you forgot to take a break from cooding...now your eyes hurt due
+                        to excessive stress on them.The solution?Use UnHook an app that helps you UnHook
+                        yourself from the screen by remaining you to take breaks at the right time.The teck stack
+                        consisted of React,Redux and Electron.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-brands fa-github"></i></span>
+                        <span><i class="fa-solid fa-download"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 12 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>PIZZA MAN</h3>
+                    <h4>Personal Project</h4>
+                    <p class="exp-date">August 2020</p>
+                    <p class="exp-descl">
+                        Pizza Man is always open to serve you.Order all your favourite pizzas from the comfort of your
+                        home,and we will ensure free
+                        delivery for all orders.The teck stack consisted od React & Redux.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-brands fa-github"></i></span>
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+                <img src="./pizzaman.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card13,14 -->
+        <div class="experience-container">
+            <!-- Card 13 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./weather.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>WEATHER MAN</h3>
+                    <h4>Personal Project</h4>
+                    <p class="exp-date">May 2020</p>
+                    <p class="exp-desc">
+                        Weather Man haslocal and international weather forcasts<br> from the most accurate weather
+                        forcasting technology<br>
+                        featuring up-to-the-minute weather reports.The teck stack<br> consisted of Python and Django
+                        with with weather weather API,<br>
+                        Charts.js & AOS.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                        <span><i class="fa-brands fa-github"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 14 -->
+            <div class="experience-card">
+                <div class="exp-content right">
+                    <h3>CAMPUS</h3>
+                    <h4>Internship</h4>
+                    <p class="exp-date">January 2020 - July 2020</p>
+                    <p class="exp-descl">
+                        Developed the landing page and worked on the web applications of campus 24,a tech startup aiming
+                        tobrevolutionize
+                        the interactions between college departments by fueling collaboration,enterpreneurial
+                        spirit,talent development,learning experience,and team spirit.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-solid fa-link"></i></span>
+                    </div>
+                </div>
+                <img src="./campus.jpeg" alt="Lounge" class="exp-img">
+            </div>
+        </div>
+        <!-- card15 -->
+        <div class="experience-container">
+            <!-- Card 15 -->
+            <div id="experience-card" class="flex">
+                <div><img src="./codingproblems.jpeg" width="100px" alt="Upwork" class="exp-img"></div>
+                <div class="exp-content">
+                    <h3>DAILY CPDING PROBLEMS</h3>
+                    <h4>Personal Project</h4>
+                    <p class="exp-date">November 2019 - February 2021</p>
+                    <p class="exp-desc">
+                        Solved 350+ interview problems from Daily Coding Problem,a<br>
+                        mailing list for coding interview problems asked at FAANG and <br>other top tech companies.
+                    </p>
+                    <div class="exp-icons">
+                        <span><i class="fa-brands fa-github"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ACHIEVEMENTS">
+        <h1>ACHIE<span>VE</span>MENTS</h1>
+
+        <div class="achieve">
+            <div class="achievement">
+                <div class="icon green">📄</div>
+                <div class="text">
+                    <div class="titlee">5+ TIMES GLOBAL #1 WEEKLY BLOG WRITER</div>
+                    <div class="subtitle">
+                        <h4>Dev</h4>
+                        <p>January, 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon blue">🏆</div>
+                <div class="text">
+                    <div class="titlee">TOP RATED FREELANCER</div>
+                    <div class="subtitle">
+                        <h4>Upwork</h4>
+                        <p>September, 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon teal">🚀</div>
+                <div class="text">
+                    <div class="titlee">RISING TALENT</div>
+                    <div class="subtitle">
+                        <h4>Upwork</h4>
+                        <p>July, 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon pink">🚁</div>
+                <div class="text">
+                    <div class="titlee">MARS 2020 HELICOPTER MISSION CONTRIBUTOR</div>
+                    <div class="subtitle">
+                        <h4>GitHub & NASA</h4>
+                        <p>April, 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon star">⭐</div>
+                <div class="text">
+                    <div class="titlee">GLOBAL RANK 750</div>
+                    <div class="subtitle">
+                        <h4>Google Kickstart 2020 Round H</h4>
+                        <p>November, 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="achievement">
+                <div class="icon gold">🥇</div>
+                <div class="text">
+                    <div class="titlee">WINNER OF CODING COMPETITION</div>
+                    <div class="subtitle">
+                        <h4>RCC Institute of Information Technology</h4>
+                        <p>March, 2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon silver">🥈</div>
+                <div class="text">
+                    <div class="titlee">1ST RUNNER-UP OF CODING COMPETITION</div>
+                    <div class="subtitle">
+                        <h4>Heritage Institute of Information Technology</h4>
+                        <p>September, 2019</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="icon bronze">🥉</div>
+                <div class="text">
+                    <div class="titlee">2ND RUNNER-UP OF CODING COMPETITION</div>
+                    <div class="subtitle">
+                        <h4>Government College of Engineering and Ceramic Technology</h4>
+                        <p>March, 2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="About">
+        <h1>AB<span>O</span>UT</h1>
+        <div class="aboutme" class="hidden">
+            <div>
+                <img src="./aboutme.jpeg" width="400px" height="300px">
+            </div>
+            <div>
+                <p class="gray">I am Tapajyoti Bose, a Top Rated Freelancer on Upwork. I am also an avid Open Source
+                    Conmoutar with
+                    contributions ranging from Huge Feature Additions to Tiny Fixes and Documentation Ghanges at several
+                    Large Organizations (like Microsoft. Amazon, Material Ul, Numpy, Webhint, etc). The Cent Review
+                    below, which you will find in my Upwork reviews and others like it, describes the qualtiy of work
+                    and value that you can expect from working with me: "Highly skilled frontarld developer wad
+                    continuously impressed with how quickly Tap could help turn a concept into working product the be an
+                    asset on any project he works on and I'd happily work with him again."</p>
+                <button onclick="window.open('EMAAN.pdf', '_blank')">
+                    View Resume
+                </button>
+                <!-- <button>View Resume</button> -->
+            </div>
+        </div>
+    </section>
+    <section id="Blogs">
+        <h1>BL<span>O</span>GS</h1>
+        <div class="blogs">
+            <!-- Blog Card 1 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="Blog 1">
+                    <div class="blog-img-text">
+                        <p>7 Libraries<br>You Should Know as a<br>React Developer <span>💯🔥</span></p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>7 LIBRARIES YOU SHOULD KNOW AS A REACT DEVELOPER <span>💯🔥</span></h2>
+                    <p class="date">Sat Mar 04 2023</p>
+                    <div class="tags">
+                        <button class="button">react</button>
+                        <button class="button">Javascript</button>
+                        <button class="button">Webdev</button>
+                        <button class="button">Productivity</button>
+
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 523</span>
+                        <span><i class="fa-regular fa-comment"></i> 27</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" alt="Blog 2">
+                    <div class="blog-img-text">
+                        <p>7 JavaScript Web APIs<br>To build Futuristic Websites<br>you didn't know <span>🤯</span></p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>7 JAVASCRIPT WEB APIS TO BUILD FUTURISTIC WEBSITES YOU DIDN'T KNOW <span>🤯</span></h2>
+                    <p class="date">Sat Feb 18 2023</p>
+                    <div class="tags">
+                        <button class="button">webdev</button>
+                        <button class="button">Javascript</button>
+                        <button class="button">html</button>
+                        <button class="button">beginners</button>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 820</span>
+                        <span><i class="fa-regular fa-comment"></i> 51</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Card 3 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Blog 3">
+                    <div class="blog-img-text">
+                        <p>7 Free Public APIs<br>You will love as a developer</p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>7 FREE PUBLIC APIS YOU WILL LOVE AS A DEVELOPER <span>💖</span></h2>
+                    <p class="date">Sat Feb 04 2023</p>
+                    <div class="tags">
+                        <button class="button">javascript</button>
+                        <button class="button">webdev</button>
+                        <button class="button">programming</button>
+                        <button class="button">api</button>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 1185</span>
+                        <span><i class="fa-regular fa-comment"></i> 27</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="blogs">
+            <!-- Blog Card 4-->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg" alt="Blog 1">
+                    <div class="blog-img-text">
+                        <p>7 Shorthand Optimizations<br>Every JavaScript Developer Should Know 😎</p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>7 SHORTHAND OPTIMIZATION TRICKS EVERY JAVASCRIPT DEVELOPER SHOULD KNOW <span>😎</span></h2>
+                    <p class="date">Sat Oct 29 2022</p>
+                    <div class="tags">
+                        <button class="button">Javascript</button>
+                        <button class="button">webdev</button>
+                        <button class="button">programming</button>
+                        <button class="button">Productivity</button>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 923</span>
+                        <span><i class="fa-regular fa-comment"></i> 56</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Card 5-->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="./HTML.jpeg" alt="Blog 2">
+                    <div class="blog-img-text">
+                        <p>7 Cool HTML Elements<br>Nobody Uses 🌐😎</p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>7 COOL HTML ELEMENTS NOBODY USES</h2>
+                    <p class="date">Sat Oct 01 2022</p>
+                    <div class="tags">
+                        <button class="button">webdev</button>
+                        <button class="button">html</button>
+                        <button class="button">javascript </button>
+                        <button class="button">Programming</button>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 478</span>
+                        <span><i class="fa-regular fa-comment"></i> 40</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Card 6-->
+            <div class="blog-card">
+                <div class="blog-img dark">
+                    <img src="./CSS.jpeg" alt="Blog 3">
+                    <div class="blog-img-text">
+                        <p>Mastering these 7 Basics CSS<br>Skills will make you a Frontend Wizard 🧙‍♂️✨</p>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h2>MASTERING THESE 7 BASICS CSS SKILLS WILL MAKE YOU A FRONTEND WIZARD 🧙‍♂️✨</h2>
+                    <p class="date">Sat Sep 10 2022</p>
+                    <div class="tags">
+                        <button class="button">webdev</button>
+                        <button class="button">programming</button>
+                        <button class="button">css</button>
+                        <button class="button">beginners</button>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-regular fa-heart"></i> 625</span>
+                        <span><i class="fa-regular fa-comment"></i> 15</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view-all">
+        </div>
+    </div>
+    <!-- <section id="Testimonial">
+        
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="testimonials-title">TESTIMONIALS<span class="underline"></span></h2>
+        <div class="testimonial-carousel">
+            <button class="testimonial-arrow left" aria-label="Previous testimonial">&#60;</button>
+            <div class="testimonial-content fade">
+                <p class="testimonial-text">
+                    HAD A REALLY GREAT EXPERIENCE WORKING WITH TAP. EVEN BEFORE STARTING THE CONTRACT HE WAS ALREADY
+                    EXPERIMENTING IN A CODE SANDBOX AND STUDYING THE PROJECT. HE HAS GOOD COMMUNICATION SKILLS AND
+                    DELIVERED THE WORK IN THE ESTIMATED TIME.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"></div>
+                    <div>
+                        <div class="testimonial-name">FABRIZIO RINALDI</div>
+                        <div class="testimonial-role">Client (Serial Entrepreneur)</div>
+                    </div>
+                </div>
+            </div>
+            <button class="testimonial-arrow right" aria-label="Next testimonial">&#62;</button>
+        </div>
+    </section>
+    <script>
+        // ... existing code ...
+        // document.querySelector('.nav-toggle').addEventListener('click', function () {
+        //     document.querySelector('.nav-links').classList.toggle('show');
+        // });
+        // Testimonials Carousel Logic
+        const testimonials = [
+            {
+                text: `HAD A REALLY GREAT EXPERIENCE WORKING WITH TAP. EVEN BEFORE STARTING THE CONTRACT HE WAS ALREADY EXPERIMENTING IN A CODE SANDBOX AND STUDYING THE PROJECT. HE HAS GOOD COMMUNICATION SKILLS AND DELIVERED THE WORK IN THE ESTIMATED TIME.`,
+                name: 'FABRIZIO RINALDI',
+                role: 'Client (Serial Entrepreneur)',
+                avatar: 'data:image/jpeg;base64,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' // Optionally add avatar image path
+            },
+            {
+                text: `TAP IS AN EXCEPTIONAL SOFTWARE ENGINEER. HE WORKED IN MY TEAM FOR NEARLY A YEAR, AND CONSISTENTLY PERFORMED TO AN EXTREMELY HIGH LEVEL.`,
+                name: 'JACK SYMONDS',
+                role: 'Client (Co-Founder/CEO at Lounge)',
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwl41G5GDw9Bpy-kOzdtugBj9s4W3GJVIDqjAjUKvQI7TctWaZDBUAwsSWbbHYqASuF0&usqp=CAU'
+            },
+            {
+                text: `TAPAJYOTI WAS GREAT AND NOT ONLY COMPLETED THE JOB TO THE BEST OF HIS ABILITY BUT UNDER THE ALLOTTED TIME AND BUDGET!`,
+                name: 'TINA HAIBODI',
+                role: 'Client (Element Finance)',
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5I4jES3hs_pHWM2IVI-lT42aZhkNkTfkLOnnrazYop4x9pqy585Cf_VC3F7c9F4FneMQ&usqp=CAU'
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialContent = document.querySelector('.testimonial-content');
+        const testimonialText = testimonialContent.querySelector('.testimonial-text');
+        const testimonialName = testimonialContent.querySelector('.testimonial-name');
+        const testimonialRole = testimonialContent.querySelector('.testimonial-role');
+        const testimonialAvatar = testimonialContent.querySelector('.testimonial-avatar');
+
+        function showTestimonial(index) {
+            const t = testimonials[index];
+            testimonialText.textContent = t.text;
+            testimonialName.textContent = t.name;
+            testimonialRole.textContent = t.role;
+            if (t.avatar) {
+                testimonialAvatar.style.backgroundImage = `url('${t.avatar}')`;
+                testimonialAvatar.style.backgroundSize = 'cover';
+                testimonialAvatar.textContent = '';
+            } else {
+                testimonialAvatar.style.backgroundImage = '';
+                testimonialAvatar.textContent = '';
+            }
+        }
+
+        function fadeToTestimonial(nextIndex) {
+            testimonialContent.classList.add('fade-out');
+            setTimeout(() => {
+                showTestimonial(nextIndex);
+                testimonialContent.classList.remove('fade-out');
+                testimonialContent.classList.add('fade');
+            }, 400);
+        }
+
+        document.querySelector('.testimonial-arrow.left').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            fadeToTestimonial(currentTestimonial);
+        });
+        document.querySelector('.testimonial-arrow.right').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            fadeToTestimonial(currentTestimonial);
+        });
+
+        // Initialize first testimonial
+        document.addEventListener('DOMContentLoaded', () => {
+            showTestimonial(currentTestimonial);
+        });
+        // ... existing code ...
+
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <section id="contact-section">
+        <h1 class="h1">CON<span class="span">T</span>ACT</h1>
+        <p class="subtitle">
+            Have a question? Want to Collaborate? Just want to chat?<br>
+            Reach out to me on
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-dev"></i></a>
+            <a href="#"><i class="fas fa-arrow-up"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="send-message">Send me a message</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Message" required></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    ...
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const icons = document.querySelectorAll(".icon");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target); // animate once
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            icons.forEach(icon => observer.observe(icon));
+        });
+    </script>
+
+</body>
+
+</html>
