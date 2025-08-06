@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - TYLET</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .password-wrapper {
+            position: relative;
+            /* width: 100%; */
+        }
+
+        .password-wrapper input {
+            /* width: 100%; */
+            padding-right: 20px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-20%);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-password svg {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Enter your Password" autocomplete="current-password">
+        <span class="toggle-password" id="togglePassword">
+            <!-- Eye SVG icon (visible by default) -->
+            <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24">
+                <path stroke="#888" stroke-width="2" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12Z" />
+                <circle cx="12" cy="12" r="3" stroke="#888" stroke-width="2" />
+            </svg>
+            <!-- Eye-off SVG icon (hidden by default) -->
+            <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                viewBox="0 0 24 24" style="display:none">
+                <path stroke="#888" stroke-width="2"
+                    d="M3 3l18 18M10.7 10.7A3 3 0 0 0 12 15a3 3 0 0 0 2.12-.88M9.88 9.88A3 3 0 0 1 15 12c0 .53-.14 1.03-.38 1.46M21 21l-2.39-2.39C18.6 17.13 20 15 20 12c0-5-8-9-8-9S4 7 4 12c0 3 1.4 5.13 3.39 6.61L3 21" />
+            </svg>
+        </span>
+    </div>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            var passwordInput = document.getElementById('password');
+            var eyeOpen = document.getElementById('eyeOpen');
+            var eyeClosed = document.getElementById('eyeClosed');
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeOpen.style.display = "none";
+                eyeClosed.style.display = "block";
+            } else {
+                passwordInput.type = "password";
+                eyeOpen.style.display = "block";
+                eyeClosed.style.display = "none";
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
